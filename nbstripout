@@ -7,7 +7,8 @@ Useful mainly as a git pre-commit hook for users who don't want to track output 
 
 This does mostly the same thing as the `Clear All Output` command in the notebook UI.
 
-From https://gist.github.com/minrk/6176788
+Adapted from rom https://gist.github.com/minrk/6176788 to work with
+git filter driver
 """
 
 import io
