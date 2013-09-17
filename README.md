@@ -11,3 +11,5 @@ make sure that .gitconfig looks something like this:
         clean = "home/cfriedline/bin/nbstripout"
 
 create a new github repo and change the origin
+    
+    git remote set-url origin git@github.com:cfriedline/[new_repo].git
