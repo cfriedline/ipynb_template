@@ -27,7 +27,7 @@ def strip_output(nb):
 
 if __name__ == '__main__':
     filename = sys.stdin.read()
-    with StringIO.open(filename, 'r', encoding='utf8') as f:
+    with StringIO(filename) as f:
         nb = current.read(f, 'json')
     nb = strip_output(nb)
     with String.open(filename, 'w', encoding='utf8') as f:
