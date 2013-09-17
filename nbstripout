@@ -13,6 +13,7 @@ From https://gist.github.com/minrk/6176788
 import io
 import sys
 from StringIO import StringIO
+import tempfile
 
 from IPython.nbformat import current
 
@@ -26,9 +27,9 @@ def strip_output(nb):
     return nb
 
 if __name__ == '__main__':
-    filename = sys.stdin.read()
-    with StringIO(filename) as f:
-        nb = current.read(f, 'json')
+    data = sys.stdin.read()
+    f = StringIO(data)
+    nb = current.read(f, 'json')
     nb = strip_output(nb)
-    sys.stdout.write(nb)
+    sys.stdout.write(StringIO(nb).read())
 
