@@ -20,7 +20,7 @@ def strip_output(nb):
         if 'outputs' in cell:
             cell['outputs'] = []
         if 'prompt_number' in cell:
-            cell['prompt_number'] = None
+            cell['prompt_number'] = ""
     return nb
 
 if __name__ == '__main__':
