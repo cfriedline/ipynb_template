@@ -30,6 +30,5 @@ if __name__ == '__main__':
     with StringIO(filename) as f:
         nb = current.read(f, 'json')
     nb = strip_output(nb)
-    with String.open(filename, 'w', encoding='utf8') as f:
-        current.write(nb, f, 'json')
+    sys.stdout.write(nb)
 
