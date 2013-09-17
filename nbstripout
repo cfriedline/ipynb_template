@@ -12,6 +12,7 @@ From https://gist.github.com/minrk/6176788
 
 import io
 import sys
+from StringIO import StringIO
 
 from IPython.nbformat import current
 
@@ -25,10 +26,10 @@ def strip_output(nb):
     return nb
 
 if __name__ == '__main__':
-    filename = sys.argv[1]
-    with io.open(filename, 'r', encoding='utf8') as f:
+    filename = sys.stdin.read()
+    with StringIO.open(filename, 'r', encoding='utf8') as f:
         nb = current.read(f, 'json')
     nb = strip_output(nb)
-    with io.open(filename, 'w', encoding='utf8') as f:
+    with String.open(filename, 'w', encoding='utf8') as f:
         current.write(nb, f, 'json')
 
