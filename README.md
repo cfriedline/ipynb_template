@@ -8,7 +8,7 @@ Copy the nbstripout to somewhere in your path and chmod +x
 make sure that .gitconfig looks something like this:
     
     [filter "nbstrip"]
-        clean = "home/cfriedline/bin/nbstripout"
+        clean = "/home/cfriedline/bin/nbstripout"
 
 create a new github repo and change the origin
     
