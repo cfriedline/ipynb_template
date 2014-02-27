@@ -10,10 +10,10 @@ Template for creating a new git repo for an ipython notebook
 
 1. Add the following to your .gitconfig:
 
-    [filter "nbstrip"]
+    `[filter "nbstrip"]
         clean = /home/cfriedline/bin/nbstripout
         smudge = cat
-        required
+        required`
 
 1. create a new github repo and change the origin
     
