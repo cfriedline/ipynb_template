@@ -23,7 +23,7 @@ def strip_output(nb):
         if 'outputs' in cell:
             cell['outputs'] = []
         if 'execution_count' in cell:
-            cell['execution_count'] = ""
+            cell['execution_count'] = 0
     return nb
 
 if __name__ == '__main__':
