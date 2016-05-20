@@ -8,6 +8,12 @@ don't want to track output in VCS. This does mostly the same thing as the
 
 import sys
 from io import StringIO
+import codecs
+
+py2 = True
+
+if (sys.version_info > (3, 0)):
+    py2 = False
 
 try:
     # Jupyter >= 4
@@ -19,7 +25,7 @@ except ImportError:
     except ImportError:
         # IPython < 3
         from IPython.nbformat import current
-
+        
         def read(f, as_version):
             return current.read(f, 'json')
 
@@ -54,6 +60,10 @@ def strip_output(nb):
 
 
 if __name__ == '__main__':
+    nb = None
+    if py2:
+        UTF8Reader = codecs.getreader('utf8')
+        sys.stdin = UTF8Reader(sys.stdin)
     nb = read(StringIO(sys.stdin.read()), as_version=NO_CONVERT)
     nb = strip_output(nb)
     write(nb, sys.stdout)
